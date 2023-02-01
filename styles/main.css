@@ -243,6 +243,32 @@ a {
   background: linear-gradient(70.97deg, #f7aa1f 18.12%, #fbe521 94.66%);
 }
 
+.footer {
+  width: 100%;
+  background: #fafafa;
+  color: black;
+  padding: 50px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__left__title {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+.footer .social-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.footer .social-list__item {
+  font-size: 1.3rem;
+}
+
 .hero-section {
   height: 100vh;
   color: white;

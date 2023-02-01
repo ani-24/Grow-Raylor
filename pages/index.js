@@ -5,6 +5,7 @@ import bgImg from "../public/bg.png";
 import webDevImg from "../public/web-dev.png";
 import webDesignImg from "../public/web-design.png";
 import digitalMarketingImg from "../public/digital-marketing.png";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -102,6 +103,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

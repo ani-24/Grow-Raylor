@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  background: #fafafa;
+  color: black;
+  padding: 50px 0;
+  border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__left {
+    &__title {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.25em;
+    }
+  }
+  .social-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    &__item {
+      font-size: 1.3rem;
+    }
+  }
+}
