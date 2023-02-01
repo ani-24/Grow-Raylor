@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+.container {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  @include mq("md") {
+    max-width: 85%;
+  }
+  @include mq("lg") {
+    max-width: 75%;
+  }
+  @include mq("xl") {
+    max-width: 60%;
+  }
+}

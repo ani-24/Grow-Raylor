@@ -12,53 +12,55 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar">
-        <Link href="/" className="logo">
-          <Image
-            src="/logo.png"
-            width="50"
-            height="50"
-            alt="Grow Raylor logo"
-            className="logo__img"
-          />
-          <span className="logo__text">Grow Raylor</span>
-        </Link>
-        <div
-          className={`hamburger ${visible ? "cross" : ""}`}
-          onClick={toggleVisibility}
-        >
-          <div className="hamburger__bar" id="bar-1"></div>
-          <div className="hamburger__bar" id="bar-2"></div>
-          <div className="hamburger__bar" id="bar-3"></div>
-          <div className="hamburger__bar" id="bar-4"></div>
-          <div className="hamburger__bar" id="bar-5"></div>
-          <div className="hamburger__bar" id="bar-6"></div>
-          <div className="hamburger__bar" id="bar-7"></div>
-          <div className="hamburger__bar" id="bar-8"></div>
-          <div className="hamburger__bar" id="bar-9"></div>
+      <div className="containe">
+        <div className="navbar">
+          <Link href="/" className="logo">
+            <Image
+              src="/logo.png"
+              width="50"
+              height="50"
+              alt="Grow Raylor logo"
+              className="logo__img"
+            />
+            <span className="logo__text">Grow Raylor</span>
+          </Link>
+          <div
+            className={`hamburger ${visible ? "cross" : ""}`}
+            onClick={toggleVisibility}
+          >
+            <div className="hamburger__bar" id="bar-1"></div>
+            <div className="hamburger__bar" id="bar-2"></div>
+            <div className="hamburger__bar" id="bar-3"></div>
+            <div className="hamburger__bar" id="bar-4"></div>
+            <div className="hamburger__bar" id="bar-5"></div>
+            <div className="hamburger__bar" id="bar-6"></div>
+            <div className="hamburger__bar" id="bar-7"></div>
+            <div className="hamburger__bar" id="bar-8"></div>
+            <div className="hamburger__bar" id="bar-9"></div>
+          </div>
+          <ul className="navbar__list">
+            <li className="navbar__list__item">
+              <Link href="/" className="navbar__list__item__link">
+                About us
+              </Link>
+            </li>
+            <li className="navbar__list__item">
+              <Link href="/" className="navbar__list__item__link">
+                Our Services
+              </Link>
+            </li>
+            <li className="navbar__list__item">
+              <Link href="/" className="navbar__list__item__link">
+                Pricing
+              </Link>
+            </li>
+            <li className="navbar__list__item">
+              <Link href="/" className="navbar__list__item__link">
+                Contact us
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul className="navbar__list">
-          <li className="navbar__list__item">
-            <Link href="/" className="navbar__list__item__link">
-              About us
-            </Link>
-          </li>
-          <li className="navbar__list__item">
-            <Link href="/" className="navbar__list__item__link">
-              Our Services
-            </Link>
-          </li>
-          <li className="navbar__list__item">
-            <Link href="/" className="navbar__list__item__link">
-              Pricing
-            </Link>
-          </li>
-          <li className="navbar__list__item">
-            <Link href="/" className="navbar__list__item__link">
-              Contact us
-            </Link>
-          </li>
-        </ul>
       </div>
       <div className={`full-screen-nav ${visible ? "visible" : ""}`}>
         <span className={`active-text ${activeTextVisible ? "visible" : ""}`}>

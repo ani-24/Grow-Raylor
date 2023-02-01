@@ -3,3 +3,12 @@
 
 $font--heading: "Bebas Neue", cursive;
 $font--text: "Poppins", sans-serif;
+
+$i: 1;
+@while $i < 7 {
+  h#{$i} {
+    font-family: $font--heading;
+    letter-spacing: 2px;
+  }
+  $i: $i + 1;
+}

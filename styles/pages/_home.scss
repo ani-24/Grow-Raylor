@@ -1,0 +1,160 @@
+@use "../variables/" as *;
+@use "../base/" as *;
+@use "../abstracts/" as *;
+
+.hero-section {
+  height: 100vh;
+  color: white;
+  background: $gradient--secondary;
+  position: relative;
+  overflow: hidden;
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  &__img {
+    position: relative;
+    z-index: 10;
+    align-self: flex-end;
+  }
+  &__text {
+    text-align: center;
+    &__title {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5em;
+    }
+    &__subtitle {
+      &__attention {
+        font-weight: 600;
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 5px;
+          width: 100%;
+          bottom: -5px;
+          left: 0;
+          background: url("../public/decoration.png") no-repeat center;
+        }
+      }
+    }
+    &__btns-container {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+  @include mq("md") {
+    background-position: bottom 25% center;
+    &__img {
+      align-self: center;
+    }
+    &__text {
+      &__title {
+        font-size: 3rem;
+      }
+      &__btns-container {
+        gap: 30px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 500px;
+      width: 100%;
+      bottom: 0;
+      background: url("../public/wave.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  @include mq("lg") {
+    &__text {
+      &__title {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+.services {
+  padding: 100px 0;
+  &__title {
+    position: relative;
+    text-align: center;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 10px;
+      background: $gradient--primary;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+  @include mq("lg") {
+    &__title {
+      font-size: 3.5rem;
+    }
+  }
+  &__service {
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
+    &__img {
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    &__text {
+      margin-top: 30px;
+      text-align: center;
+      & > *:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      &__title {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+      }
+    }
+    @include mq("md") {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      &:not(:last-child) {
+        margin-bottom: 150px;
+      }
+      &:nth-of-type(odd) {
+        flex-direction: row-reverse;
+      }
+      &__img {
+        flex: 1;
+      }
+      &__text {
+        flex: 1;
+        text-align: start;
+      }
+    }
+    @include mq("lg") {
+      &__text {
+        & > *:not(:last-child) {
+          margin-bottom: 30px;
+        }
+        &__title {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

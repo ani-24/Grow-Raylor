@@ -1,0 +1,29 @@
+@use "../variables/" as *;
+
+.btn {
+  padding: 1em 1.5em;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: $shadow--btns;
+  transition: box-shadow 100ms ease-out;
+  &:hover {
+    box-shadow: $shadow--btns-hover;
+  }
+  &--primary {
+    border-radius: 9999px;
+    background: $gradient--secondary;
+    color: white;
+  }
+  &--secondary {
+    border-radius: 5px;
+  }
+  &--white {
+    background: white;
+    color: black;
+  }
+  &--gradient--primary {
+    background: $gradient--primary;
+  }
+}
