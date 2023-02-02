@@ -50,7 +50,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="navbar__list__item">
-              <Link href="/" className="navbar__list__item__link">
+              <Link href="/pricing" className="navbar__list__item__link">
                 Pricing
               </Link>
             </li>
@@ -85,7 +85,7 @@ const Navbar = () => {
           <li className="full-screen-nav__list__item">
             <Link
               className="full-screen-nav__list__item__link"
-              href="/about"
+              href="/services"
               onMouseEnter={() => {
                 setActiveText("Our Services");
                 setActiveTextVisible(true);
@@ -100,7 +100,7 @@ const Navbar = () => {
           <li className="full-screen-nav__list__item">
             <Link
               className="full-screen-nav__list__item__link"
-              href="/about"
+              href="/pricing"
               onMouseEnter={() => {
                 setActiveText("Pricing");
                 setActiveTextVisible(true);
@@ -115,7 +115,7 @@ const Navbar = () => {
           <li className="full-screen-nav__list__item">
             <Link
               className="full-screen-nav__list__item__link"
-              href="/about"
+              href="/contact"
               onMouseEnter={() => {
                 setActiveText("Contact us");
                 setActiveTextVisible(true);

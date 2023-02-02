@@ -417,4 +417,37 @@ a {
   .services__service__text__title {
     font-size: 3rem;
   }
+}
+
+.pricing {
+  min-height: 100vh;
+}
+.pricing__inner {
+  height: 100%;
+}
+.pricing__card {
+  flex: 1;
+  box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  background: white;
+}
+.pricing__card__title {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.pricing__card__list {
+  list-style: none;
+}
+.pricing__card__list__item {
+  margin-bottom: 1em;
+}
+.pricing__card__list__item::marker {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.pricing__card:nth-child(2) {
+  z-index: 10;
+  background: linear-gradient(221.45deg, #4494ff 7.52%, #3372c6 76.55%);
+  color: white;
 }/*# sourceMappingURL=main.css.map */
