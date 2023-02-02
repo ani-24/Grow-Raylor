@@ -1,0 +1,8 @@
+@use "../variables/" as *;
+@use "../base/" as *;
+@use "../abstracts/" as *;
+
+.pricing-section {
+    height: 100vh;
+    background: $gradient--secondary;
+}

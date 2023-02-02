@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import bgImg from "../public/bg.png";
 import webDevImg from "../public/web-dev.png";
 import webDesignImg from "../public/web-design.png";
 import digitalMarketingImg from "../public/digital-marketing.png";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
