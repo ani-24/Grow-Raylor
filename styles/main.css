@@ -337,7 +337,7 @@ form .btn--submit {
   width: 100%;
   bottom: -5px;
   left: 0;
-  background: url("../public/decoration.png") no-repeat center;
+  background: url("./public/decoration.png") no-repeat center;
 }
 .hero-section__text__btns-container {
   margin-top: 30px;
@@ -364,7 +364,7 @@ form .btn--submit {
     height: 500px;
     width: 100%;
     bottom: 0;
-    background: url("../public/wave.png") no-repeat;
+    background: url("./public/wave.png") no-repeat;
     background-size: 100% 100%;
   }
 }
