@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     visible ? setVisible(false) : setVisible(true);
     console.log(visible);
   };
+  const router = useRouter();
   return (
     <>
       <div className="containe">
@@ -50,12 +52,22 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="navbar__list__item">
-              <Link href="/pricing" className="navbar__list__item__link">
+              <Link
+                href="/pricing"
+                className={`navbar__list__item__link ${
+                  router.pathname === "/pricing" ? "active" : ""
+                }`}
+              >
                 Pricing
               </Link>
             </li>
             <li className="navbar__list__item">
-              <Link href="/" className="navbar__list__item__link">
+              <Link
+                href="/contact"
+                className={`navbar__list__item__link ${
+                  router.pathname === "/contact" ? "active" : ""
+                }`}
+              >
                 Contact us
               </Link>
             </li>

@@ -1,0 +1,29 @@
+form {
+  .input-field {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    .form-label {
+      position: absolute;
+      background: #fafafa;
+      transform: translate(1em, -50%);
+      padding: 0 10px;
+    }
+    .form-input {
+      display: block;
+      padding: 1.5em 2em;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 5px;
+      outline: none;
+      width: 100%;
+      resize: vertical;
+      font-family: inherit;
+      font-size: 0.8rem;
+      background: transparent;
+    }
+  }
+  .btn--submit {
+    text-transform: uppercase;
+    border: 1px solid rgba($color: #000000, $alpha: 0.05);
+  }
+}

@@ -1,0 +1,74 @@
+@use "../variables/" as *;
+@use "../abstracts/" as *;
+
+.pricing--main {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card-gallery {
+    margin-top: 10vh;
+    .card {
+      background: $clr--gray;
+      box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.2);
+      padding: 2.5em;
+      border-radius: 5px;
+      height: 100%;
+      max-width: 500px;
+      margin-bottom: 3rem;
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      &__list {
+        list-style: none;
+        list-style-position: inside;
+        font-size: 0.9rem;
+        margin-bottom: 3rem;
+        &__item {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          margin-bottom: 1.5em;
+          &--cross {
+            span:nth-child(2) {
+              opacity: 0.5;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+      &__bottom {
+        font-size: 0.8rem;
+        font-style: italic;
+        font-weight: bolder;
+      }
+      &--advanced {
+        z-index: 10;
+        background: $gradient--secondary;
+        color: white;
+        position: relative;
+      }
+    }
+    @include mq("xl") {
+      display: flex;
+      .card {
+        &--advanced {
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 120%;
+            top: -10%;
+            left: 0;
+            background: $gradient--secondary;
+            z-index: -1;
+            border-radius: 5px;
+            box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}

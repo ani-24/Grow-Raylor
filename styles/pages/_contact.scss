@@ -1,0 +1,77 @@
+@use "../variables/" as *;
+@use "../abstracts/" as *;
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0 100px 0;
+  &__form-container {
+    background: $clr--gray;
+    box-shadow: $shadow--basic;
+    & > div {
+      padding: 50px;
+      display: grid;
+      align-items: center;
+      &:first-child {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          background: #333;
+          height: 1px;
+          width: 50%;
+          left: 25%;
+        }
+        &::after {
+          content: "or";
+          text-transform: uppercase;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          padding: 10px;
+          background: #fafafa;
+          font-weight: 900;
+          transform: translate(-50%, 50%);
+        }
+      }
+    }
+    &__list {
+      list-style: none;
+      &__item {
+        margin-bottom: 30px;
+        display: flex;
+        &__icon {
+          display: inline-block;
+          margin-right: 20px;
+        }
+        &__text {
+          color: #333;
+        }
+      }
+    }
+    @include mq("xl") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      & > div:first-child {
+        &::before {
+          width: 1px;
+          height: 50%;
+          left: 100%;
+          bottom: 25%;
+        }
+        &::after {
+          bottom: 50%;
+          left: 100%;
+        }
+      }
+    }
+    @include mq("2xl") {
+      & > div {
+        padding: 50px 100px;
+      }
+    }
+  }
+}

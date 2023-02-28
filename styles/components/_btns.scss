@@ -7,6 +7,7 @@
   cursor: pointer;
   font-family: inherit;
   box-shadow: $shadow--btns;
+  outline-color: transparent;
   transition: box-shadow 100ms ease-out;
   &:hover {
     box-shadow: $shadow--btns-hover;
