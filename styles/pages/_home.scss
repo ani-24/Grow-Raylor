@@ -8,6 +8,7 @@
   background: $gradient--secondary;
   position: relative;
   overflow: hidden;
+  padding-top: 200px;
   &__inner {
     height: 100%;
     display: flex;
@@ -48,11 +49,13 @@
     &__btns-container {
       margin-top: 30px;
       display: flex;
+      flex-direction: column;
       gap: 10px;
       justify-content: center;
     }
   }
   @include mq("md") {
+    padding-top: 150px;
     background-position: bottom 25% center;
     &__img {
       align-self: center;
@@ -63,6 +66,7 @@
       }
       &__btns-container {
         gap: 30px;
+        flex-direction: row;
       }
     }
     &::after {

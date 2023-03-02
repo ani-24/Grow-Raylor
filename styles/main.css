@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+html {
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 h1 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 2px;
@@ -279,6 +293,8 @@ form .input-field .form-label {
   background: #fafafa;
   transform: translate(1em, -50%);
   padding: 0 10px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 form .input-field .form-input {
   display: block;
@@ -292,6 +308,9 @@ form .input-field .form-input {
   font-size: 0.8rem;
   background: transparent;
 }
+form .input-field .form-input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
 form .btn--submit {
   text-transform: uppercase;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -303,6 +322,7 @@ form .btn--submit {
   background: linear-gradient(221.45deg, #4494ff 7.52%, #3372c6 76.55%);
   position: relative;
   overflow: hidden;
+  padding-top: 200px;
 }
 .hero-section__inner {
   height: 100%;
@@ -342,11 +362,13 @@ form .btn--submit {
 .hero-section__text__btns-container {
   margin-top: 30px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
 }
 @media (min-width: 768px) {
   .hero-section {
+    padding-top: 150px;
     background-position: bottom 25% center;
   }
   .hero-section__img {
@@ -357,6 +379,7 @@ form .btn--submit {
   }
   .hero-section__text__btns-container {
     gap: 30px;
+    flex-direction: row;
   }
   .hero-section::after {
     content: "";

@@ -8,6 +8,8 @@ form {
       background: #fafafa;
       transform: translate(1em, -50%);
       padding: 0 10px;
+      font-size: 0.8rem;
+      color: rgba($color: #000000, $alpha: 0.7);
     }
     .form-input {
       display: block;
@@ -20,6 +22,9 @@ form {
       font-family: inherit;
       font-size: 0.8rem;
       background: transparent;
+      &:focus {
+        border: 1px solid rgba($color: #000000, $alpha: 0.5);
+      }
     }
   }
   .btn--submit {
