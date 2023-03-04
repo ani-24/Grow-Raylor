@@ -5,13 +5,45 @@ import Navbar from "../components/Navbar";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { RxCrossCircled } from "react-icons/rx";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const pricing = () => {
+  const comp = useRef(null);
+  const fadeInRefs = useRef([]);
+
+  const addToFadeInRefs = (el) => {
+    fadeInRefs.current.push(el);
+  };
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      fadeInRefs.current.forEach((el) => {
+        gsap.from(el, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.7,
+          delay: 0.05,
+          scrollTrigger: {
+            trigger: el,
+            start: "10% bottom",
+          },
+        });
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
   return (
     <>
       <Navbar />
-      <div className="container pricing--main">
+      <div className="container pricing--main" ref={comp}>
         <div className="card-gallery">
-          <div className="card card--basic">
+          <div className="card card--basic" ref={addToFadeInRefs}>
             <h1 className="card__title">Basic</h1>
             <ul className="card__list">
               <li className="card__list__item">
@@ -59,7 +91,7 @@ const pricing = () => {
             </ul>
             <span className="card__bottom">*Prices are negotiable</span>
           </div>
-          <div className="card card--advanced">
+          <div className="card card--advanced" ref={addToFadeInRefs}>
             <h1 className="card__title">Advanced</h1>
             <ul className="card__list">
               <li className="card__list__item">
@@ -107,7 +139,7 @@ const pricing = () => {
             </ul>
             <span className="card__bottom">*Prices are negotiable</span>
           </div>
-          <div className="card card--professional">
+          <div className="card card--professional" ref={addToFadeInRefs}>
             <h1 className="card__title">Professional</h1>
             <ul className="card__list">
               <li className="card__list__item">

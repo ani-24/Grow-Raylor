@@ -89,6 +89,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 .navbar .hamburger {
   height: 15px;

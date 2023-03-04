@@ -4,12 +4,44 @@ import { BsFacebook, BsFillTelephoneFill, BsTwitter } from "react-icons/bs";
 import { FaEnvelope, FaTelegramPlane } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const contact = () => {
+  const comp = useRef(null);
+  const fadeInRefs = useRef([]);
+
+  const addToFadeInRefs = (el) => {
+    fadeInRefs.current.push(el);
+  };
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      fadeInRefs.current.forEach((el) => {
+        gsap.from(el, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.7,
+          delay: 0.05,
+          scrollTrigger: {
+            trigger: el,
+            start: "10% bottom",
+          },
+        });
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
   return (
     <>
       <Navbar />
-      <div className="contact">
-        <div className="container">
+      <div className="contact" ref={comp}>
+        <div className="container" ref={addToFadeInRefs}>
           <div className="contact__form-container">
             <div>
               <ul className="contact__form-container__list">

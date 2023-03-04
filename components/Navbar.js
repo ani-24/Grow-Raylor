@@ -3,7 +3,32 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Navbar = () => {
+  const comp = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let t1 = gsap.timeline();
+      t1.from(".navbar", {
+        width: "50%",
+        duration: 0.9,
+      }).from(".animate--fade-in", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25,
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
+
   const [visible, setVisible] = useState(false);
   const [activeText, setActiveText] = useState("");
   const [activeTextVisible, setActiveTextVisible] = useState(false);
@@ -14,9 +39,9 @@ const Navbar = () => {
   const router = useRouter();
   return (
     <>
-      <div className="containe">
+      <div ref={comp}>
         <div className="navbar">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo animate--fade-in">
             <Image
               src="/logo.png"
               width="50"
@@ -41,17 +66,17 @@ const Navbar = () => {
             <div className="hamburger__bar" id="bar-9"></div>
           </div>
           <ul className="navbar__list">
-            <li className="navbar__list__item">
+            <li className="navbar__list__item animate--fade-in">
               <Link href="/" className="navbar__list__item__link">
                 About us
               </Link>
             </li>
-            <li className="navbar__list__item">
+            <li className="navbar__list__item animate--fade-in">
               <Link href="/" className="navbar__list__item__link">
                 Our Services
               </Link>
             </li>
-            <li className="navbar__list__item">
+            <li className="navbar__list__item animate--fade-in">
               <Link
                 href="/pricing"
                 className={`navbar__list__item__link ${
@@ -61,7 +86,7 @@ const Navbar = () => {
                 Pricing
               </Link>
             </li>
-            <li className="navbar__list__item">
+            <li className="navbar__list__item animate--fade-in">
               <Link
                 href="/contact"
                 className={`navbar__list__item__link ${
