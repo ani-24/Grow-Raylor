@@ -92,7 +92,7 @@ const Contact = () => {
               </ul>
             </div>
             <div>
-              <form action="https://formspree.io/f/mpzerork" method="POST">
+              <form action="https://formspree.io/f/xoqzwpzl" method="POST">
                 <div className="input-field">
                   <label htmlFor="name" className="form-label">
                     Name:
