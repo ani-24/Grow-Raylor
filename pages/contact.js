@@ -10,7 +10,11 @@ import { useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { useForm, ValidationError } from "@formspree/react";
+
 const contact = () => {
+  const [state, handleSubmit] = useForm("mpzerork");
+
   const comp = useRef(null);
   const fadeInRefs = useRef([]);
 
@@ -88,25 +92,35 @@ const contact = () => {
               </ul>
             </div>
             <div>
-              <form>
+              <form action="https://formspree.io/f/mpzerork" method="POST">
                 <div className="input-field">
                   <label htmlFor="name" className="form-label">
                     Name:
                   </label>
-                  <input className="form-input" type="text" id="name" />
+                  <input
+                    className="form-input"
+                    type="text"
+                    id="name"
+                    name="name"
+                  />
                 </div>
                 <div className="input-field">
                   <label htmlFor="email" className="form-label">
                     Email:
                   </label>
-                  <input className="form-input" type="email" id="email" />
+                  <input
+                    className="form-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                  />
                 </div>
                 <div className="input-field">
                   <label htmlFor="message" className="form-label">
                     Mesage:
                   </label>
                   <textarea
-                    name=""
+                    name="message"
                     id="message"
                     cols="30"
                     rows="10"
