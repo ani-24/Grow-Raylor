@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { useForm, ValidationError } from "@formspree/react";
 
-const contact = () => {
+const Contact = () => {
   const [state, handleSubmit] = useForm("mpzerork");
 
   const comp = useRef(null);
@@ -140,4 +140,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

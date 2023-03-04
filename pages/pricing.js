@@ -11,7 +11,7 @@ import { useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const pricing = () => {
+const Pricing = () => {
   const comp = useRef(null);
   const fadeInRefs = useRef([]);
 
@@ -194,4 +194,4 @@ const pricing = () => {
   );
 };
 
-export default pricing;
+export default Pricing;
