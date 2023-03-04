@@ -97,7 +97,11 @@ export default function Home() {
           </div>
           <div className="services__service">
             <div className="services__service__img">
-              <Image src={webDevImg} ref={addToFadeInRefs} />
+              <Image
+                src={webDevImg}
+                ref={addToFadeInRefs}
+                alt="a computer monitor, keyboard and mouse with a wrench and settings icon floating in air"
+              />
             </div>
             <div className="services__service__text">
               <h2
@@ -110,8 +114,8 @@ export default function Home() {
                 className="services__service__text__subtitle"
                 ref={addToFadeInRefs}
               >
-                We'll build your site to suit your specific needs, creating the
-                custom functions to make it faster and more secure.
+                We&apos;ll build your site to suit your specific needs, creating
+                the custom functions to make it faster and more secure.
               </p>
               <Link href="/" className="btn btn--primary" ref={addToFadeInRefs}>
                 Learn more
@@ -120,7 +124,7 @@ export default function Home() {
           </div>
           <div className="services__service">
             <div className="services__service__img" ref={addToFadeInRefs}>
-              <Image src={webDesignImg} />
+              <Image src={webDesignImg} alt="" />
             </div>
             <div className="services__service__text">
               <h2
@@ -143,7 +147,7 @@ export default function Home() {
           </div>
           <div className="services__service">
             <div className="services__service__img" ref={addToFadeInRefs}>
-              <Image src={digitalMarketingImg} />
+              <Image src={digitalMarketingImg} alt="" />
             </div>
             <div className="services__service__text">
               <h2
