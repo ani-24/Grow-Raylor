@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    @apply overflow-x-hidden;
+  }
+  ::selection {
+    @apply bg-primary-green text-white;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .container {
+    @apply w-[95%] lg:w-4/5 mx-auto;
+  }
+  .button {
+    @apply py-3 px-6 rounded-full text-white inline-flex items-center gap-4 border-4 before:w-full before:h-full before:-z-10 before:absolute relative before:top-0 before:right-0 font-bold uppercase overflow-hidden hover:before:w-0 before:duration-500 duration-300 before:ease-in-out;
+  }
+  .button-primary {
+    @apply border-primary-green hover:text-primary-green before:bg-primary-green;
+  }
+  .list-item {
+    @apply relative after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:duration-300 hover:after:w-full after:ease-in-out after:bg-black;
+  }
+  .card {
+    @apply flex flex-col items-center after:absolute relative after:h-4/5 after:w-full after:bg-gray-100 after:bottom-0 after:-z-10 after:rounded-md;
+  }
+  .card-img {
+    @apply h-[100px] w-[100px] object-cover rounded-full;
+  }
+  .card-body {
+    @apply text-center p-8;
+  }
+  .card-body-title {
+    @apply uppercase font-bold mb-3;
+  }
+  .card-body-text {
+    @apply text-sm leading-6;
+  }
+  .service-slide {
+    @apply h-full flex justify-center items-center shadow-md p-5 max-w-lg lg:max-w-none;
+  }
+  .service-slide-inner {
+    @apply flex flex-col text-center;
+  }
+  .service-slide-image {
+    @apply h-[300px] object-cover mb-5;
+  }
+  .service-slide-text {
+    @apply w-full;
+  }
+  .service-slide-text-title {
+    @apply text-xl lg:text-3xl font-black uppercase mb-7;
+  }
+  .service-slide-text-subtitle {
+    @apply text-sm leading-loose;
+  }
+  .footer-icon {
+    @apply h-7 w-7 flex justify-center items-center rounded-full after:absolute relative after:-z-10 after:bg-black after:duration-200 duration-200 after:h-0 after:w-0 after:rounded-full hover:after:h-full hover:after:w-full hover:text-white overflow-hidden;
+  }
 }
