@@ -122,7 +122,7 @@ const Navbar = () => {
       </div>
       <motion.div
         ref={mobileNavRef}
-        className="fixed h-screen w-full -top-full left-0 bg-black z-[100] flex justify-center items-center"
+        className="fixed h-screen w-full -top-[150%] left-0 bg-black z-[100] flex justify-center items-center"
       >
         <div className="absolute top-0 container flex justify-end py-10">
           <div
