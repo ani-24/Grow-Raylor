@@ -51,7 +51,7 @@ const Navbar = () => {
         ],
         [
           mobileNavRef.current,
-          { top: "-100%" },
+          { top: "-150%" },
           { duration: 0.7 },
           { delay: 0.5 },
           { ease: "easeInOut" },
